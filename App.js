@@ -67,7 +67,7 @@ export default class App extends React.Component {
       <KeyboardAvoidingView style={styles.container} behavior="padding">
         <StatusBar barStyle="light-content" />
         <ImageBackground
-          source={getImageForWeather(weather)}
+          source={getImageForWeather(weather)} //trae el fondo adecuado
           style={styles.imageContainer}
           imageStyle={styles.image}
         >

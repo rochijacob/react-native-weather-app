@@ -1,15 +1,22 @@
 import React from "react";
 import { StyleSheet, TextInput, View } from 'react-native';
+import PropTypes from 'prop-types';
 
 //Exporto un componente con un placeholder
+
 export default class SearchInput extends React.Component {
-    
-    constructor(props){ //inicializamos el estado del componente y sus datos
-        super(props);
-        this.state = { //accedemos al estado del componente
-            text:'',
-        }
+    static propTypes = {
+        onSubmit: PropTypes.func.isRequired,
+        placeholder: PropTypes.string,
     }
+
+    static defaultProps = {
+        placeholder: '',
+    };
+
+    state = {
+        text: '',
+    };
 
     //Update location constant cuando el usuario cambia el campo 
     handleChageText = text => {
